@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author - Home Page</title>
+    <link href= "/public/assets/styleshome.css" rel="stylesheet" type="text/css" />
+    <link href= "/public/assets/styleshome-reader.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+   
+    <div id="title">
+     <% updatedSettings.forEach
+     (function(parameter1)
+     { %>
+         
+             <h1><%= parameter1.blog_title %></h1>
+             <h3><%= parameter1.subtitle %></h3>
+             <h5><%= parameter1.author_name %></h5>
+            
+             <!-- <img src="/boy.png" width="100" height="100" alt="Italian Trulli" >  -->
+     <% }
+     )
+     %>
+    </div>
+
+    
+
+
+<form method="post">
+    <% publishedArticles.forEach
+    (function(parameter1)
+    { %>
+     
+        <button type="submit"name="id" formaction="article"value="<%= parameter1.id %>" >
+        <bold><h2><%= parameter1.title %></h2></bold>
+        <br>
+        <h3><%= parameter1.subtitle %></h3>
+        <br>
+        <h3><%= parameter1.last_modified %></h3>
+    </button>
+    <% }
+    )
+    %>
+</form>
+
+
+</body>
+</html> 

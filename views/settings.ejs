@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
+    <link href= "/public/assets/styleshome.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <title>Author - Settings Page</title>
+
+</head>
+<body>
+    <div id="title">
+        <% updatedSettings.forEach
+        (function(parameter1)
+        { %>
+            
+                <h1><%= parameter1.blog_title %></h1>
+                <h3><%= parameter1.subtitle %></h3>
+                <h5><%= parameter1.author_name %></h5>
+               
+                <!-- <img src="/boy.png" width="100" height="100" alt="Italian Trulli" >  -->
+        <% }
+        )
+        %>
+       </div>
+      
+    <% updatedSettings.forEach(function(parameter1){ %>
+       <form action="settingUpdated" method="post" id="settingpage">
+        <table border="2" width="183"  style='table-layout:fixed'>
+            <col width="150">
+            <col width="250">
+            
+        <thead>
+                    
+        </thead>
+        <tbody>
+            <tr>
+                <th>Blog Title</th>
+            <td><input type=" text" name="blog_title" value="<%= parameter1.blog_title %>"></td>
+            </tr>
+            <tr>
+                <th>Subtitle</th>
+            <td><input type="text" name="subtitle" value="<%= parameter1.subtitle %>"></td>
+            </tr> 
+            <tr>
+                <th>Author Name</th>  
+            <td><input type="text" name="author_name" value="<%= parameter1.author_name %>"></td>
+            </tr>  
+        </tbody>
+    </table>
+    <button type="submit" value="UPDATE">UPDATE</button>
+</form>
+<% }) %>
+    
+    
+  
+</body>
+</html>
